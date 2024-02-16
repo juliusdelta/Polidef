@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    polidef (0.1.0)
+    polidef (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -53,6 +53,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   minitest (~> 5.0)
