@@ -101,21 +101,21 @@ def test_send_notification_for
     message.send_notification_to(@user, notifier: mock_notification_service)
   end
   
-  assert_mock_notification_service
+  assert_mock mock_notification_service
 end
 
-  # Forces Policy rejected
 def test_send_notification_for
   message = build(:message_in_default_channel, content: "Test")
 
   mock_notification_service = Minitest::Mock.new
   mock_notification_service.expects(:perform_later, 'job-id-123', [Time], Hash)
   
+  # Forces Policy rejected
   assert_with_rejected_policy :notification_policy do
     message.send_notification_to(@user, notifier: mock_notification_service)
   end
 
-  assert_mock_notification_service
+  assert_mock mock_notification_service
 end
 ```
 
